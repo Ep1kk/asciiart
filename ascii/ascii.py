@@ -71,10 +71,10 @@ def shading(skip, color):
             result.append("N")
 
 
-def imageselect(path):
+def imageselect(path, DimX, DimY):
     img = Image.open(path)
     width, height = img.size
-    imgsmall = img.resize((64, 64), resample=0)
+    imgsmall = img.resize((int(DimX), int(DimY)), resample=0)
     imggs = ImageOps.grayscale(imgsmall)
     hsvimg = imggs.convert("HSV")
 
@@ -98,9 +98,18 @@ def imageselect(path):
 
 print("Write the path to the file you want to be turned into ascii art (include file extension)(can be local path):")
 chosen = input("")
-imageselect(chosen)
+
+print("Select the X size that you want your image to be compressed too:")
+dimchoseX = input("")
+
+print("Select the Y size that you want your image to be compressed too:")
+dimchoseY = input("")
+
+
+imageselect(chosen, dimchoseX, dimchoseY)
 
 tosave = ("".join(map(str, result)))
+
 print(tosave)
 
 print("would you like to save this file? (y/n)")
