@@ -100,4 +100,13 @@ print("Write the path to the file you want to be turned into ascii art (include 
 chosen = input("")
 imageselect(chosen)
 
-print("".join(map(str, result)))
+tosave = ("".join(map(str, result)))
+print(tosave)
+
+print("would you like to save this file? (y/n)")
+Answer = input("")
+if (Answer == "y") or (Answer == "Y"):
+    print("what would you like to name this file (do not include file extension)")
+    name = input("")
+    file = open(name + ".txt", "w")
+    file.write(tosave)
