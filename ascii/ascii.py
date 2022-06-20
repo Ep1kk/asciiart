@@ -1,7 +1,8 @@
 from PIL import Image, ImageOps
 import math
 
-
+shades = [" ", "_", ".", ",", "-", "=", "+", ":", ";", "c", "b", "a", "!", "?",
+          "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "$", "W", "#", "@", " "]
 result = []
 
 
@@ -12,63 +13,7 @@ def shading(skip, color):
         result.append("\n")
 
     if skip == False:
-
-        if asciicolor == 0:
-            result.append(" ")
-        if asciicolor == 1:
-            result.append("_")
-        if asciicolor == 2:
-            result.append(".")
-        if asciicolor == 3:
-            result.append(",")
-        if asciicolor == 4:
-            result.append("-")
-        if asciicolor == 5:
-            result.append("=")
-        if asciicolor == 6:
-            result.append("+")
-        if asciicolor == 7:
-            result.append(":")
-        if asciicolor == 8:
-            result.append(";")
-        if asciicolor == 9:
-            result.append("c")
-        if asciicolor == 10:
-            result.append("b")
-        if asciicolor == 11:
-            result.append("a")
-        if asciicolor == 12:
-            result.append("!")
-        if asciicolor == 13:
-            result.append("?")
-        if asciicolor == 14:
-            result.append("1")
-        if asciicolor == 15:
-            result.append("2")
-        if asciicolor == 16:
-            result.append("3")
-        if asciicolor == 17:
-            result.append("4")
-        if asciicolor == 18:
-            result.append("5")
-        if asciicolor == 19:
-            result.append("6")
-        if asciicolor == 20:
-            result.append("7")
-        if asciicolor == 21:
-            result.append("8")
-        if asciicolor == 22:
-            result.append("9")
-        if asciicolor == 23:
-            result.append("$")
-        if asciicolor == 24:
-            result.append("W")
-        if asciicolor == 25:
-            result.append("#")
-        if asciicolor == 26:
-            result.append("@")
-        if asciicolor == 27:
-            result.append("N")
+        result.append(shades[asciicolor])
 
 
 def imageselect(path, DimX, DimY):
